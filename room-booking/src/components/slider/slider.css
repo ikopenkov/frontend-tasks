@@ -1,0 +1,89 @@
+.root {
+    max-height: 100%;
+    * {
+        outline: none;
+    }
+    :global(.slick-arrow) {
+        position: absolute;
+        z-index: 1;
+        fill: #fff;
+        top: 0;
+        height: 100%;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:global(.slick-prev) {
+            left: 0;
+            background: linear-gradient(
+                to left,
+                transparent 0%,
+                rgba(0, 0, 0, 0.25) 100%
+            );
+        }
+        &:global(.slick-next) {
+            right: 0;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(0, 0, 0, 0.25) 100%
+            );
+        }
+    }
+
+    :global(.slick-dots) {
+        margin: 0;
+        padding: 8px;
+        list-style-type: none;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.30) 100%);
+        li {
+            button {
+                border-radius: 100%;
+                background-color: #fff;
+                width: 6px;
+                height: 6px;
+                opacity: 0.8;
+                padding: 0;
+                margin: 0 4px;
+                border: 0;
+                font-size: 0;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            &:global(.slick-active) {
+                button {
+                    width: 8px;
+                    height: 8px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.arrowWrapper {
+}
+
+.defaultTheme {
+}
+
+.roomPreviewTheme {
+    overflow: hidden;
+    border-radius: 3px;
+    :global(.slick-arrow) {
+        display: none !important;
+    }
+    &:hover {
+        :global(.slick-arrow) {
+            display: flex !important;
+        }
+    }
+}

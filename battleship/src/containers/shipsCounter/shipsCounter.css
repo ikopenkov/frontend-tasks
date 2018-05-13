@@ -1,0 +1,99 @@
+.root {
+    @media (max-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
+
+.counter {
+    display: flex;
+    margin-bottom: 11px;
+    @media (max-width: 1280px) {
+        margin-bottom: 9px;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+        width: 185px;
+    }
+}
+
+.shipImage {
+    height: 77px;
+    width: 240px;
+    flex: 0 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    @media (max-width: 1280px) {
+        height: 35px;
+        width: 120px;
+    }
+    @media (max-width: 768px) {
+        height: 24px;
+        width: 90px;
+    }
+}
+
+.carrier {
+    background-image: url(assets/images/Carrier\ Shape.png);
+}
+
+.battleship {
+    background-image: url(assets/images/Battleship\ Shape.png);
+}
+
+.cruiser {
+    background-image: url(assets/images/Cruiser\ Shape.png);
+}
+
+.submarine {
+    background-image: url(assets/images/Submarine\ Shape.png);
+}
+
+.destroyer {
+    background-image: url(assets/images/Destroyer\ Shape.png);
+}
+
+.countMarks {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    @media (max-width: 1280px) {
+        padding-left: 13px;
+    }
+    @media (max-width: 1280px) {
+        padding-left: 10px;
+    }
+}
+
+.countMark {
+    width: 25px;
+    height: 25px;
+    background-size: 33px;
+    background-position: 50% 50%;
+    margin-right: 20px;
+    @media (max-width: 1280px) {
+        width: 12px;
+        height: 12px;
+        background-size: 16px;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 5px;
+        }
+    }
+    @media (max-width: 768px) {
+        width: 10px;
+        height: 10px;
+        background-size: 12px;
+        margin-right: 6px;
+    }
+}
+
+.miss {
+    background-image: url(assets/images/Miss\ small.png);
+}
+
+.hit {
+    background-image: url(assets/images/Hit\ small.png);
+}

@@ -1,0 +1,41 @@
+<div tw-click-outside="$ctrl.switchCart(false)" ng-class="css.root">
+    {{ gamesInCart = ($ctrl.games | filter:{inCart:true}); css = $ctrl.css; "" }}
+    <button ng-click="$ctrl.switchCart()" ng-class="css.switchButton">
+        <img ng-class="css.cartIcon" src="{{ $ctrl.cartIcon }}"> {{ gamesInCart.length }}
+    </button>
+    <div ng-class="{
+        [css.hidden]: !$ctrl.opened,
+        [css.opened]: $ctrl.opened,
+        [css.menu]: true}
+    ">
+        <div ng-class="css.menuTop">
+            <div>
+                {{ gamesInCart.length }} item{{ gamesInCart.length === 1 ? '' : 's' }} in cart
+            </div>
+            <div ng-class="css.totalPrice">
+                ${{ gamesInCart | gamesPrice }}
+            </div>
+            <button ng-class="css.clearButton" ng-click="$ctrl.clearCart()">Clear cart</button>
+        </div>
+        <ul ng-repeat="game in gamesInCart" ng-class="css.items">
+            <li ng-class="css.item">
+                <div ng-class="css.img" ng-style="{ 'background-image': 'url({{game.img}})' }">
+                </div>
+                <div ng-class="css.itemCenter">
+                    <div ng-class="css.title">
+                        {{ game.name }}
+                    </div>
+
+                    <button ng-class="css.removeButton" ng-click="$ctrl.removeFromCart(game)">Remove</button>
+                </div>
+
+                <div ng-class="css.discount" ng-if="game.discount">
+                    -{{ game.discount * 100 }}%
+                </div>
+                <div ng-class="css.itemPrice" ng-click="$ctrl.addToCart(game)">
+                    $ {{ game.price }}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+.root {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.hour {
+    width: 8.333%;
+    &:last-child {
+        width: 0;
+        .hourBar {
+            display: none;
+        }
+    }
+    &:nth-child(even) {
+        .hourText {
+            opacity: 0.3;
+        }
+    }
+}
+
+.hourText {
+    margin-left: -18px;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+    @media (max-width: 1023px) {
+        margin-left: -10px;
+    }
+}
+
+.hourTextMinutes {
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+
+.hourBar {
+    height: 15px;
+    margin-right: 1px;
+    display: flex;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.minute {
+    flex: 1 1 auto;
+}
+
+.free {
+    background-color: var(--green);
+}
+
+.occupied {
+    background-color: var(--red);
+}

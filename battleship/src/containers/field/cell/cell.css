@@ -1,0 +1,16 @@
+.root {
+    box-sizing: border-box;
+    border: 1px solid var(--grey);
+    background-size: calc(100% + 4px);
+    background-position: 50% 50%;
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.hit {
+    background-image: url(assets/images/Hit.png);
+}
+
+.missed {
+    background-image: url(assets/images/Miss.png);
+}

@@ -1,0 +1,50 @@
+.root {
+    background-color: #3f4044;
+    flex: 0 0 220px;
+}
+
+.navHead {
+    background-color: #017be8;
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headLink {
+    color: #fff;
+    font-family: Rokkitt;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.list {
+    list-style-type: none;
+    padding: 10px 0 0;
+    margin: 0;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.item {
+    padding: 20px 30px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    margin-right: 20px;
+}

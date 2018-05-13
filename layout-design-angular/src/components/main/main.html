@@ -1,0 +1,27 @@
+<div>
+    <div ng-class="css.topbarWrapper">
+        <div ng-class="{ [css.topbar]: true, 'container': true}">
+            <div ng-class="css.logo">
+                <img ng-src="{{logo}}">
+            </div>
+            <div ng-class="css.cart">
+                <cart></cart>
+            </div>
+        </div>
+    </div>
+
+    <div ng-class="{ [css.main]: true, 'container': true}">
+        <h3>Game of the week</h3>
+
+        <div ng-class="css.mainImgWrapper">
+            <div
+                ng-class="css.mainImg"
+                ng-style="{ 'background-image': 'url({{mainImg}})' }
+            ">
+            </div>
+            <button onclick="alert('💩')" ng-class="css.secretButton">A secret button that you should totally implement</button>
+        </div>
+
+        <games-list></games-list>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+{{ css = $ctrl.css; "" }}
+<ul ng-class="{ [css.root]: true, 'container': true}">
+    <li ng-class="{
+            [css.item]: true,
+            [css.itemOwned]: game.owned,
+        }"
+        ng-repeat="game in $ctrl.games"
+    >
+        <div ng-class="css.img" ng-style="{ 'background-image': 'url({{game.img}})' }">
+        </div>
+        <div ng-class="css.itemBody">
+            <div ng-class="css.title">
+                {{ game.name }}
+            </div>
+            <div ng-class="css.itemBottom">
+
+                <div ng-if="game.discount" ng-class="css.discount">
+                    -{{ game.discount * 100 }}%
+                </div>
+
+                <button
+                    ng-if="!game.inCart && !game.owned"
+                    ng-click="$ctrl.addToCart(game)"
+                    ng-class="css.button"
+                >
+                    $ {{ game.price }}
+                </button>
+
+                <button
+                    ng-if="game.inCart"
+                    ng-click="$ctrl.removeFromCart(game)"
+                    ng-class="css.button"
+                >
+                    in cart
+                </button>
+
+                <button
+                    ng-if="game.owned"
+                    ng-class="{
+                        [css.button]: true,
+                        [css.buttonDisabled]: true
+                    }"
+                >
+                    owned
+                </button>
+            </div>
+        </div>
+    </li>
+</ul>
